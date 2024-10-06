@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_explore_treatments",
+  "info": {
+    "displayName": "ExploreTreatment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "listImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.list-images",
+      "min": 1
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

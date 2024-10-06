@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_footer_inner_footer_columns",
+  "info": {
+    "displayName": "Column",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.list",
+      "min": 1
+    }
+  }
+}

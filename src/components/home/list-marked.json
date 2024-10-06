@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_home_list_markeds",
+  "info": {
+    "displayName": "List-marked"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

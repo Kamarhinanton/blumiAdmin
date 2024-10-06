@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_footer_inner_copyrights",
+  "info": {
+    "displayName": "copyright"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "copyrightText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
