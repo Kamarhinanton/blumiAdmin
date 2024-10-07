@@ -6,23 +6,17 @@
   },
   "options": {},
   "attributes": {
-    "description": {
-      "type": "string",
-      "required": true
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "subText": {
-      "type": "text",
-      "required": true
-    },
     "listSlider": {
       "type": "component",
       "repeatable": true,
       "component": "home.list-slider",
       "min": 4,
+      "required": true
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.title-component",
       "required": true
     }
   }

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_base_title_with_icons",
+  "info": {
+    "displayName": "TitleWithIcons"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -6,14 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "description": {
-      "type": "string",
-      "required": true
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "list": {
       "type": "component",
       "repeatable": true,
@@ -43,6 +35,12 @@
       "required": true,
       "min": 1,
       "max": 3
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.title-component",
+      "required": true
     }
   }
 }

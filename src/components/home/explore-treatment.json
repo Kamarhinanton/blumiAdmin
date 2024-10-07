@@ -6,10 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "description": {
-      "type": "string",
-      "required": true
-    },
     "listImages": {
       "type": "component",
       "repeatable": true,
@@ -19,8 +15,10 @@
     "buttonText": {
       "type": "string"
     },
-    "title": {
-      "type": "string",
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.title-component",
       "required": true
     }
   }

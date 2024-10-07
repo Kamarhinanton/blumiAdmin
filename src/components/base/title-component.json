@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_base_title_components",
+  "info": {
+    "displayName": "TitleComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "subText": {
+      "type": "text"
+    },
+    "titleWithIcons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.title-with-icons",
+      "min": 1
+    }
+  }
+}

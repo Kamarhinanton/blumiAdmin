@@ -567,10 +567,9 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     exploreTreatment: Schema.Attribute.Component<
       'home.explore-treatment',
       false
-    > &
-      Schema.Attribute.Required;
-    howItWorks: Schema.Attribute.Component<'home.how-it-works', false> &
-      Schema.Attribute.Required;
+    >;
+    howItWorks: Schema.Attribute.Component<'home.how-it-works', false>;
+    latestListing: Schema.Attribute.Component<'home.latest-listing', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -22,13 +22,18 @@
       "type": "component",
       "repeatable": false,
       "component": "home.explore-treatment",
-      "required": true
+      "required": false
     },
     "howItWorks": {
       "type": "component",
       "repeatable": false,
       "component": "home.how-it-works",
-      "required": true
+      "required": false
+    },
+    "latestListing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.latest-listing"
     }
   }
 }

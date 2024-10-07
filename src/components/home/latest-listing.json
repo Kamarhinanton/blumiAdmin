@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_latest_listings",
+  "info": {
+    "displayName": "LatestListing"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.title-component",
+      "required": true
+    },
+    "listCities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.list-cities",
+      "required": true,
+      "min": 1
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "listSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.list-slider",
+      "min": 4,
+      "required": true
+    }
+  }
+}
