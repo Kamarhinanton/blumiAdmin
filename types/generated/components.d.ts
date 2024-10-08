@@ -29,6 +29,63 @@ export interface FooterInnerCopyright extends Struct.ComponentSchema {
   };
 }
 
+export interface BaseTitleWithIcons extends Struct.ComponentSchema {
+  collectionName: 'components_base_title_with_icons';
+  info: {
+    displayName: 'TitleWithIcons';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface BaseTitleComponent extends Struct.ComponentSchema {
+  collectionName: 'components_base_title_components';
+  info: {
+    displayName: 'TitleComponent';
+    description: '';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    subText: Schema.Attribute.Text;
+    titleWithIcons: Schema.Attribute.Component<'base.title-with-icons', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface BaseList extends Struct.ComponentSchema {
+  collectionName: 'components_base_lists';
+  info: {
+    displayName: 'list';
+    description: '';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BaseCta extends Struct.ComponentSchema {
+  collectionName: 'components_base_ctas';
+  info: {
+    displayName: 'CTA';
+  };
+  attributes: {
+    placeholderText: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeListSlider extends Struct.ComponentSchema {
   collectionName: 'components_home_list_sliders';
   info: {
@@ -191,68 +248,15 @@ export interface HomeExploreTreatment extends Struct.ComponentSchema {
   };
 }
 
-export interface BaseTitleWithIcons extends Struct.ComponentSchema {
-  collectionName: 'components_base_title_with_icons';
-  info: {
-    displayName: 'TitleWithIcons';
-  };
-  attributes: {
-    text: Schema.Attribute.String;
-    icon: Schema.Attribute.Media<'images' | 'files'>;
-  };
-}
-
-export interface BaseTitleComponent extends Struct.ComponentSchema {
-  collectionName: 'components_base_title_components';
-  info: {
-    displayName: 'TitleComponent';
-    description: '';
-  };
-  attributes: {
-    description: Schema.Attribute.String;
-    subText: Schema.Attribute.Text;
-    titleWithIcons: Schema.Attribute.Component<'base.title-with-icons', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-  };
-}
-
-export interface BaseList extends Struct.ComponentSchema {
-  collectionName: 'components_base_lists';
-  info: {
-    displayName: 'list';
-    description: '';
-  };
-  attributes: {
-    description: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
-    link: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface BaseCta extends Struct.ComponentSchema {
-  collectionName: 'components_base_ctas';
-  info: {
-    displayName: 'CTA';
-  };
-  attributes: {
-    placeholderText: Schema.Attribute.String & Schema.Attribute.Required;
-    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'footer-inner.footer-column': FooterInnerFooterColumn;
       'footer-inner.copyright': FooterInnerCopyright;
+      'base.title-with-icons': BaseTitleWithIcons;
+      'base.title-component': BaseTitleComponent;
+      'base.list': BaseList;
+      'base.cta': BaseCta;
       'home.list-slider': HomeListSlider;
       'home.list-marked': HomeListMarked;
       'home.list-images': HomeListImages;
@@ -262,10 +266,6 @@ declare module '@strapi/strapi' {
       'home.how-it-works': HomeHowItWorks;
       'home.hero': HomeHero;
       'home.explore-treatment': HomeExploreTreatment;
-      'base.title-with-icons': BaseTitleWithIcons;
-      'base.title-component': BaseTitleComponent;
-      'base.list': BaseList;
-      'base.cta': BaseCta;
     }
   }
 }
