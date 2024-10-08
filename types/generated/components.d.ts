@@ -1,5 +1,34 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface FooterInnerFooterColumn extends Struct.ComponentSchema {
+  collectionName: 'components_footer_inner_footer_columns';
+  info: {
+    displayName: 'Column';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Component<'base.list', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface FooterInnerCopyright extends Struct.ComponentSchema {
+  collectionName: 'components_footer_inner_copyrights';
+  info: {
+    displayName: 'copyright';
+  };
+  attributes: {
+    year: Schema.Attribute.String & Schema.Attribute.Required;
+    copyrightText: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeListSlider extends Struct.ComponentSchema {
   collectionName: 'components_home_list_sliders';
   info: {
@@ -219,38 +248,11 @@ export interface BaseCta extends Struct.ComponentSchema {
   };
 }
 
-export interface FooterInnerFooterColumn extends Struct.ComponentSchema {
-  collectionName: 'components_footer_inner_footer_columns';
-  info: {
-    displayName: 'Column';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.Component<'base.list', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-  };
-}
-
-export interface FooterInnerCopyright extends Struct.ComponentSchema {
-  collectionName: 'components_footer_inner_copyrights';
-  info: {
-    displayName: 'copyright';
-  };
-  attributes: {
-    year: Schema.Attribute.String & Schema.Attribute.Required;
-    copyrightText: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'footer-inner.footer-column': FooterInnerFooterColumn;
+      'footer-inner.copyright': FooterInnerCopyright;
       'home.list-slider': HomeListSlider;
       'home.list-marked': HomeListMarked;
       'home.list-images': HomeListImages;
@@ -264,8 +266,6 @@ declare module '@strapi/strapi' {
       'base.title-component': BaseTitleComponent;
       'base.list': BaseList;
       'base.cta': BaseCta;
-      'footer-inner.footer-column': FooterInnerFooterColumn;
-      'footer-inner.copyright': FooterInnerCopyright;
     }
   }
 }
