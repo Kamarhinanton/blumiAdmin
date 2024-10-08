@@ -21,7 +21,13 @@ export default [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:1337'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
@@ -29,5 +35,3 @@ export default [
   'strapi::favicon',
   'strapi::public',
 ];
-
-
